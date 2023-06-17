@@ -59,7 +59,7 @@
                             <td>Jumlah</td>
                             <td>:</td>
                             <td>
-                                <input wire:model="jumlah_pesanan" id="jumlah_pesanan" type="number" class="form-control @error('jumlah_pesanan') is-invalid @enderror" value="{{ old('jumlah_pesanan') }}" required autocomplete="name" autofocus>
+                                <input  wire:model="jumlah_pesanan" id="jumlah_pesanan" type="number" class="form-control @error('jumlah_pesanan') is-invalid @enderror" value="{{ old('jumlah_pesanan') }}" required autocomplete="name"  autofocus @if($product->is_ready !== 1) disabled @endif>
 
                                 @error('jumlah_pesanan')
                                 <span class="invalid-feedback" role="alert">
@@ -84,7 +84,7 @@
                             <td>Nama</td>
                             <td>:</td>
                             <td>
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" value="{{ old('nama') }}" autocomplete="name" autofocus>
+                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" value="{{ old('nama') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
 
                                 @error('nama')
                                 <span class="invalid-feedback" role="alert">
@@ -97,7 +97,7 @@
                             <td>Nomor</td>
                             <td>:</td>
                             <td>
-                                <input id="nomor" type="number" class="form-control @error('nomor') is-invalid @enderror" wire:model="nomor" value="{{ old('nomor') }}" autocomplete="name" autofocus>
+                                <input id="nomor" type="number" class="form-control @error('nomor') is-invalid @enderror" wire:model="nomor" value="{{ old('nomor') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
 
                                 @error('nomor')
                                 <span class="invalid-feedback" role="alert">
