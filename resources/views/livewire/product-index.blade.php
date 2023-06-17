@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-9">
-            <h2>List <strong>Jersey</strong></h2>
+            <h2>{{ $title }}</h2>
         </div>
         <div class="col-md-3">
             <div class="input-group mb-3">

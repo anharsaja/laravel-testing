@@ -44,7 +44,7 @@ class ProductLiga extends Component
 
         return view('livewire.product-index', [
             'products' => $products,
-            // 'title' => 'List Jersey'
+            'title' => 'Jersey Liga ' . $this -> liga -> nama
         ])->layout('livewire.layouts.app');
     }
 }
