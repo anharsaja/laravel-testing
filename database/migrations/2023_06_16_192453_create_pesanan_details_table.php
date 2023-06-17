@@ -17,10 +17,10 @@ class CreatePesananDetailsTable extends Migration
             $table->id();
             $table->integer('jumlah_pesanan');
             $table->integer('total_harga');
-            $table->boolean('name_set')->default(false);
+            $table->boolean('nama_set')->default(false);
             $table->string('nama')->nullable();
             $table->string('nomor')->nullable();
-            $table->integer('nomor_id');
+            $table->integer('product_id');
             $table->integer('pesanan_id');
             $table->timestamps();
         });
