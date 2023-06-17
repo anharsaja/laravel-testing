@@ -68,7 +68,14 @@
                                 @enderror
                             </td>
                         </tr>
+                        
+                        @if($jumlah_pesanan)
 
+                        <tr>
+                            <td colspan="3"><strong>Nameset </strong>(Harus Pesan Grosir)</td>
+                        </tr>
+
+                        @else
 
                         <tr>
                             <td colspan="3"><strong>Namaset </strong>(Opsional)</td>
@@ -100,12 +107,9 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td colspan="3">
-                                <button type="submit" class="btn btn-success btn-block" @if($product->is_ready !== 1) disabled @endif><i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
-                            </td>
-                        </tr>
+                        @endif
                     </table>
+                    <button type="submit" class="btn btn-success btn-block" @if($product->is_ready !== 1) disabled @endif><i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
                 </div>
             </div>
         </div>
