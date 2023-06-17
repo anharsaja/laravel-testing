@@ -1,6 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color:rgb(236, 236, 236);
+    background-color:white;
 }
 
 .banner img {
@@ -39,7 +39,6 @@ body {
 .btn-success {
     width: 100%;
     border-radius: 10px;
-    background-color: gren;
 }
 
 
@@ -51,7 +50,7 @@ body {
 }
 
 .gambar-product {
-    background-color: #f1f1f1;
+    background-color: #f1efef;
     border-width: 0;
-    border-radius: 20px;
+    border-radius: 12px;
 }

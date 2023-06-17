@@ -3,6 +3,7 @@
 use App\Http\Livewire\Home;
 use App\Http\Livewire\ProductLiga;
 use App\Http\Livewire\ProductIndex;
+use App\Http\Livewire\ProductDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,4 @@ Auth::routes();
 Route::get('/', Home::class)->name('home');
 Route::get('/products', ProductIndex::class)->name('products');
 Route::get('/products/liga{ligaId}', ProductLiga::class)->name('products.liga');
-Route::get('/products/{id}', ProductIndex::class)->name('products.detail');
+Route::get('/products/{id}', ProductDetail::class)->name('products.detail');
