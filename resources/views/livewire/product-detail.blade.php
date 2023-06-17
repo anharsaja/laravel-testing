@@ -13,6 +13,17 @@
 
 
     <div class="row">
+        <div class="col-md-12">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+            @endif
+        </div>
+    </div>
+
+
+    <div class="row">
         <div class="col-md-6">
             <div class="card gambar-product">
                 <div class="card-body">
@@ -37,79 +48,90 @@
 
             <div class="row">
                 <div class="col">
-                    <table class="table mt-5">
-                        <tr>
-                            <td>Liga</td>
-                            <td>:</td>
-                            <td>
-                                <img src="{{ url('assets/liga') }}/{{ $product->liga->gambar }}" class="img-fluid" width="50">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jenis</td>
-                            <td>:</td>
-                            <td>{{ $product -> jenis }}</td>
-                        </tr>
-                        <tr>
-                            <td>Berat</td>
-                            <td>:</td>
-                            <td>{{ $product -> berat }}</td>
-                        </tr>
-                        <tr>
-                            <td>Jumlah</td>
-                            <td>:</td>
-                            <td>
-                                <input  wire:model="jumlah_pesanan" id="jumlah_pesanan" type="number" class="form-control @error('jumlah_pesanan') is-invalid @enderror" value="{{ old('jumlah_pesanan') }}" required autocomplete="name"  autofocus @if($product->is_ready !== 1) disabled @endif>
+                    <form wire:submit.prevent="masukkanKeranjang">
+                        <table class="table mt-5">
+                            <tr>
+                                <td>Liga</td>
+                                <td>:</td>
+                                <td>
+                                    <img src="{{ url('assets/liga') }}/{{ $product->liga->gambar }}" class="img-fluid" width="50">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Jenis</td>
+                                <td>:</td>
+                                <td>{{ $product -> jenis }}</td>
+                            </tr>
+                            <tr>
+                                <td>Berat</td>
+                                <td>:</td>
+                                <td>{{ $product -> berat }}</td>
+                            </tr>
+                            <tr>
+                                <td>Harga</td>
+                                <td>:</td>
+                                <td>Rp. {{ number_format($product -> harga) }},00</td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah</td>
+                                <td>:</td>
+                                <td>
+                                    <input wire:model="jumlah_pesanan" id="jumlah_pesanan" type="number" class="form-control @error('jumlah_pesanan') is-invalid @enderror" value="{{ old('jumlah_pesanan') }}" required autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
 
-                                @error('jumlah_pesanan')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </td>
-                        </tr>
-                        
-                        @if($jumlah_pesanan)
+                                    @error('jumlah_pesanan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td colspan="3"><strong>Nameset </strong>(Harus Pesan Grosir)</td>
-                        </tr>
+                            @if($jumlah_pesanan > 1)
 
-                        @else
+                            <tr>
+                                <td colspan="3"><strong>Nameset </strong>(Harus Pesan Grosir)</td>
+                            </tr>
 
-                        <tr>
-                            <td colspan="3"><strong>Namaset </strong>(Opsional)</td>
-                        </tr>
-                        <tr>
-                            <td>Nama</td>
-                            <td>:</td>
-                            <td>
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" value="{{ old('nama') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
+                            @else
 
-                                @error('nama')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nomor</td>
-                            <td>:</td>
-                            <td>
-                                <input id="nomor" type="number" class="form-control @error('nomor') is-invalid @enderror" wire:model="nomor" value="{{ old('nomor') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
+                            <tr>
+                                <td colspan="3"><strong>Nameset </strong>(Opsional)</td>
+                            </tr>
+                            <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>
+                                    <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" wire:model="nama" value="{{ old('nama') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
 
-                                @error('nomor')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </td>
-                        </tr>
+                                    @error('nama')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nomor</td>
+                                <td>:</td>
+                                <td>
+                                    <input id="nomor" type="number" class="form-control @error('nomor') is-invalid @enderror" wire:model="nomor" value="{{ old('nomor') }}" autocomplete="name" autofocus @if($product->is_ready !== 1) disabled @endif>
 
-                        @endif
-                    </table>
-                    <button type="submit" class="btn btn-success btn-block" @if($product->is_ready !== 1) disabled @endif><i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
+                                    @error('nomor')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </td>
+                            </tr>
+
+                            @endif
+                            <tr>
+                                <td colspan="3">
+                                    <button type="submit" class="btn btn-success btn-block" @if($product->is_ready !== 1) disabled @endif><i class="fas fa-shopping-cart"></i> Masukkan Keranjang</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
