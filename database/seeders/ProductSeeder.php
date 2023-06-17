@@ -21,13 +21,13 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'nama' => 'LEICESTER CITY HOME 2018-2019',
+            'nama' => 'LEICESTER CITY HOME 2018',
             'liga_id' => 2,
             'gambar' => 'leicester.png'
         ]);
 
         DB::table('products')->insert([
-            'nama' => 'MAN. UNITED AWAY 2018-2019',
+            'nama' => 'MAN. UNITED AWAY 2018',
             'liga_id' => 2,
             'gambar' => 'mu.png'
         ]);
@@ -45,13 +45,13 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'nama' => 'DORTMUND AWAY 2018-2019',
+            'nama' => 'DORTMUND AWAY 2018',
             'liga_id' => 1,
             'gambar' => 'dortmund.png'
         ]);
 
         DB::table('products')->insert([
-            'nama' => 'BAYERN MUNCHEN 3RD 2018 2019',
+            'nama' => 'BAYERN MUNCHEN 2018',
             'liga_id' => 1,
             'gambar' => 'munchen.png'
         ]);
@@ -81,7 +81,7 @@ class ProductSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
-            'nama' => 'REAL MADRID 3RD 2018-2019',
+            'nama' => 'REAL MADRID 3RD 2018',
             'liga_id' => 3,
             'gambar' => 'madrid.png'
         ]);
