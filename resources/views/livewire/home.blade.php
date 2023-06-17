@@ -11,11 +11,13 @@
         <div class="row mt-4">
             @foreach ($ligas as $liga)
             <div class="col-md-3">
-                <div class="card shadow">
-                    <div class="card-body text-center">
-                        <img src="{{ url('assets/liga') }}/{{ $liga -> gambar }}" class="img-fluid">
+                <a href="{{ route('products.liga', $liga->id) }}">
+                    <div class="card shadow">
+                        <div class="card-body text-center">
+                            <img src="{{ url('assets/liga') }}/{{ $liga -> gambar }}" class="img-fluid">
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
@@ -47,7 +49,7 @@
                                 <a href="" class="btn btn-dark btn-block"><i class="fas fa-eye"></i> Detail</a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
