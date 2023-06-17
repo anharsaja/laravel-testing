@@ -20,3 +20,5 @@ Auth::routes();
 
 Route::get('/', Home::class)->name('home');
 Route::get('/products', ProductIndex::class)->name('products');
+Route::get('/products/liga{id}', ProductIndex::class)->name('products.liga');
+Route::get('/products/{id}', ProductIndex::class)->name('products.detail');
