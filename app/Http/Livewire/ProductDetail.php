@@ -40,7 +40,7 @@ class ProductDetail extends Component
         /* Menghitung total harga */
         if (!empty($this -> nama)) 
         {
-            $total_harga = $this -> jumlah_pesanan * $this -> product -> harga + $this -> product -> harga_namaset;
+            $total_harga = $this -> jumlah_pesanan * $this -> product -> harga + $this -> product -> harga_nameset;
         } else {
             $total_harga = $this -> jumlah_pesanan * $this -> product -> harga;
         }

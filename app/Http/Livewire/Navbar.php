@@ -24,6 +24,8 @@ class Navbar extends Component
             if($pesanan)
             {
                 $this -> jumlah = PesananDetail::where('pesanan_id', $pesanan->id)->count();
+            } else {
+                $this -> jumlah = 0;
             }
         }
     }
@@ -36,6 +38,8 @@ class Navbar extends Component
             if($pesanan)
             {
                 $this -> jumlah = PesananDetail::where('pesanan_id', $pesanan->id)->count();
+            } else {
+                $this -> jumlah = 0;
             }
         }
     }

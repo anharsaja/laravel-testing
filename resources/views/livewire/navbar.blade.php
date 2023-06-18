@@ -37,7 +37,7 @@
                     <!-- Authentication Links -->
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('keranjang') }}" class="nav-link">
                             Keranjang <i class="fas fa-shopping-bag"></i>
 
                             @if($jumlah_pesanan !== 0)
