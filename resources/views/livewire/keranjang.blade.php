@@ -113,7 +113,7 @@
                         <tr>
                             <td colspan="7"></td>
                             <td colspan="2">
-                                <a href="#" class="btn btn-success btn-block">
+                                <a href="{{ route('checkout') }}" class="btn btn-success btn-block">
                                     <i class="fas fa-arrow-right">Check Out</i>
                                 </a>
                             </td>
