@@ -56,7 +56,7 @@ class ProductDetail extends Component
                 'user_id' => Auth::user()->id,
                 'total_harga' => $total_harga,
                 'status' => 0,
-                'kode_unik' => mt_rand(100, 999)
+                'potongan' => mt_rand(1000, 3000)
             ]);
 
             $pesanan = Pesanan::where('user_id', Auth::user()->id)->where('status', '0')->first();

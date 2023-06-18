@@ -98,7 +98,7 @@
                             <td colspan="6" align="right"><strong>Potongan</strong></td>
                             <td>:</td>
                             <td align="left">
-                                <strong>Rp. {{ number_format($pesanan -> kode_unik) }}</strong>
+                                <strong>Rp. {{ number_format($pesanan -> potongan) }}</strong>
                             </td>
                             <td></td>
                         </tr>
@@ -106,7 +106,7 @@
                             <td colspan="6" align="right"><strong>Total Yang Dibayarkan</strong></td>
                             <td>:</td>
                             <td align="left">
-                                <strong>Rp. {{ number_format($pesanan_detail -> total_harga - $pesanan -> kode_unik) }}</strong>
+                                <strong>Rp. {{ number_format($pesanan -> total_harga - $pesanan -> potongan) }}</strong>
                             </td>
                             <td></td>
                         </tr>

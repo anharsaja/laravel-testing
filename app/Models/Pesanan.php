@@ -11,7 +11,7 @@ class Pesanan extends Model
         'kode_pemesanan',
         'status',
         'total_harga',
-        'kode_unik',
+        'potongan',
         'user_id'
     ];
     
