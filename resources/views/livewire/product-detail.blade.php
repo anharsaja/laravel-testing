@@ -68,9 +68,9 @@
                                 <td>{{ $product -> berat }}</td>
                             </tr>
                             <tr>
-                                <td>Harga</td>
+                                <td>Harga Satuan</td>
                                 <td>:</td>
-                                <td>Rp. {{ number_format($product -> harga) }},00</td>
+                                <td>Rp. {{ number_format($product -> harga) }}</td>
                             </tr>
                             <tr>
                                 <td>Jumlah</td>
@@ -94,9 +94,18 @@
 
                             @else
 
+                            
                             <tr>
                                 <td colspan="3"><strong>Nameset </strong>(Opsional)</td>
                             </tr>
+                            <tr>
+                                <td>Harga Set</td>
+                                <td>:</td>
+                                <td>
+                                    Rp. {{ number_format($product -> harga_nameset) }}
+                                </td>
+                            </tr>
+                            
                             <tr>
                                 <td>Nama</td>
                                 <td>:</td>
