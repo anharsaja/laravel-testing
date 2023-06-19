@@ -2,7 +2,7 @@
 
     <!-- BANNER -->
     <div class="banner mb-5">
-        <img src="{{ url('assets/slider/slider1.png') }}" alt="">
+        <img src="{{ url('assets/slider/jerseybg.png') }}" alt="">
     </div>
 
 
