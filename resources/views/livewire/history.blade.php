@@ -82,7 +82,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body shadow">
-                    <p>Untuk pembayaran bisa lakukan transfer pada rekening di bawah ini dengan nominal sebesar : <strong>Rp. {{ number_format($pesanan -> total_harga - $pesanan -> potongan) }}</strong></p>
+                    <p>Untuk pembayaran bisa lakukan transfer pada rekening di bawah ini.</p>
                     <br>
                     <div class="d-flex">
                         <div class="flex-shrink-0">
