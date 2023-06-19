@@ -55,6 +55,8 @@ class Checkout extends Component
         $this -> emit('masukkanKeranjang');
 
         session()->flash('message', "Berhasil Checkout");
+
+        return redirect()->route('history');
     }
     
     public function render()
