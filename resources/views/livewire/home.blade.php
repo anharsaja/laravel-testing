@@ -12,7 +12,7 @@
             @foreach ($ligas as $liga)
             <div class="col-md-3">
                 <a href="{{ route('products.liga', $liga->id) }}">
-                    <div class="card shadow">
+                    <div class="card shadow pukai">
                         <div class="card-body text-center">
                             <img src="{{ url('assets/liga') }}/{{ $liga -> gambar }}" class="img-fluid">
                         </div>
