@@ -19,15 +19,16 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             List Jersey
                         </a>
-                        <ul class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($ligas as $liga)
-                            <li><a class="dropdown-item" href="{{ route('products.liga', $liga->id) }}">{{ $liga -> nama }}</a></li>
+                            <a class="dropdown-item" href="{{ route('products.liga', $liga->id) }}">{{ $liga -> nama }}</a>
                             @endforeach
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('products') }}">Semua Liga</a></li>
-                        </ul>
+                            <hr class="dropdown-divider">
+                            <a class="dropdown-item" href="{{ route('products') }}">Semua Liga</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('history') }}" class="nav-link">History</a>
                     </li>
 
                 </ul>
@@ -41,7 +42,7 @@
                             Keranjang <i class="fas fa-shopping-bag"></i>
 
                             @if($jumlah_pesanan !== 0)
-                            
+
                             <span class="badge text-bg-danger">{{ $jumlah_pesanan }}</span>
 
                             @endif

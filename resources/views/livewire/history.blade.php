@@ -75,3 +75,26 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body shadow">
+                    <p>Untuk pembayaran bisa lakukan transfer pada rekening di bawah ini dengan nominal sebesar : <strong>Rp. {{ number_format($pesanan -> total_harga - $pesanan -> potongan) }}</strong></p>
+                    <br>
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <img src="{{ url('assets/bri.png') }}" alt="Bank BRI" width="60">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mt-0"><strong>BANK BRI</strong></h5>
+                            No. Rekening 01293812390813 | atas nama <strong>Anhar Mukhlis</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
